@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #181719;
+  color: #ffffff;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  width: 130px;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  margin-top: 13px;
+  padding: 2px;
+  text-align: center;
+  font-weight: 100;
+}
+nav {
+  float: right;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 18px;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+/* nav li a:first-child {
+  color: yellow;
+} */
+
+nav ul li a:hover {
+  text-decoration: none;
+}
+
+nav a::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: #6ddafb;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+.main {
+  display: flex;
+  margin-top: 100px;
+}
+.text {
+  color: white;
+}
+.text p {
+  font-size: 20px;
+}
+
+.link {
+  display: flex;
+}
+
+.link a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+.box {
+}
+.pic {
+  height: 500px;
+  width: 600px;
+}
+.profile {
+  display: block;
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  background-color: #181719;
+  padding: 6px 0 0 7px;
+  right: 110px;
+  top: 580px;
+}
+.card {
+  width: 50%;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.user {
+  display: inline-flex;
+}
+.username {
+  margin-left: 18px;
+  margin-top: -15px;
+  font-weight: 300;
+}
+.username small {
+  color: lightgray;
+}
+
+.pic2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.db {
+  font-size: 24px;
+  font-weight: 400;
+}
+footer {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  bottom: -80px;
+}
