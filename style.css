@@ -3,6 +3,7 @@
 }
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -38,6 +39,22 @@ header::after {
 nav {
   float: right;
 }
+.menu {
+  display: inline-block;
+  display: none;
+  cursor: pointer;
+  float: right;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
 nav ul {
   margin: 0;
   padding: 0;
@@ -56,9 +73,6 @@ nav ul li a {
   color: #ffffff;
   cursor: pointer;
 }
-/* nav li a:first-child {
-  color: yellow;
-} */
 
 nav ul li a:hover {
   text-decoration: none;
@@ -80,7 +94,7 @@ nav a:hover::before {
 .main {
   display: flex;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 130px;
 }
 .text {
   color: white;
@@ -141,6 +155,9 @@ nav a:hover::before {
   font-size: 24px;
   font-weight: 400;
 }
+.line {
+  visibility: hidden;
+}
 footer {
   width: 100%;
   text-align: center;
@@ -148,10 +165,66 @@ footer {
   margin-top: auto;
 }
 
+/*media queries*/
+
 @media only screen and (max-width: 600px) {
   nav {
-    overflow: hidden;
+    float: left;
+    visibility: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
     position: absolute;
+    width: 90%;
+    height: 100vh;
+    background: #181719;
+    opacity: 0.9;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul {
+    display: grid;
+  }
+  nav li a {
+    font-size: 20px;
+  }
+  nav li a:hover {
+    color: #6ddafb;
+  }
+
+  nav a::before {
+    display: none;
+  }
+  .show {
+    visibility: visible;
+    /* transform: translate3d(0, -100%, 0); */
+    transform: translate3d(0, 0, 0);
+    transition: ease-in 0.3s;
+  }
+  .menu {
+    display: block;
+    position: fixed;
+    right: 0;
+    margin-top: 4px;
+    padding: 5px;
+  }
+  .change .bar1 {
+    /* -webkit-transform: rotate(-45deg) translate(-9px, 6px); */
+    transform: rotate(-45deg) translate(-8px, 4px);
+  }
+
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .change .bar3 {
+    /* -webkit-transform: rotate(45deg) translate(-8px, -8px); */
+    transform: rotate(45deg) translate(-8px, -6px);
   }
 
   nav ul {
@@ -163,9 +236,10 @@ footer {
     display: grid;
     grid-template-rows: auto auto;
     margin-top: 70px;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     grid-gap: 25px;
   }
+
   .pic {
     height: 100%;
     width: 100%;
@@ -180,9 +254,12 @@ footer {
     font-size: 20px;
     font-weight: 400;
   }
+  .line {
+    visibility: visible;
+  }
   footer {
     /* bottom: -200px; */
-    color: white;
+    color: lightgray;
     margin-top: auto;
   }
 }
