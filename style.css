@@ -1,17 +1,23 @@
 * {
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
   background-color: #181719;
   color: #ffffff;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
   width: 90%;
   margin: 0 auto;
+  min-height: 100vh;
 }
 header::after {
   content: "";
@@ -74,6 +80,7 @@ nav a:hover::before {
 .main {
   display: flex;
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 .text {
   color: white;
@@ -95,7 +102,7 @@ nav a:hover::before {
 }
 .pic {
   height: 500px;
-  width: 600px;
+  max-width: 600px;
 }
 .profile {
   display: block;
@@ -136,7 +143,46 @@ nav a:hover::before {
 }
 footer {
   width: 100%;
-  position: absolute;
   text-align: center;
-  bottom: -80px;
+  padding: 2px;
+  margin-top: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    overflow: hidden;
+    position: absolute;
+  }
+
+  nav ul {
+    display: hidden;
+    /* overflow: hidden;*/
+    position: absolute;
+  }
+  .main {
+    display: grid;
+    grid-template-rows: auto auto;
+    margin-top: 70px;
+    margin-bottom: 150px;
+    grid-gap: 25px;
+  }
+  .pic {
+    height: 100%;
+    width: 100%;
+  }
+  .profile {
+    width: 330px;
+    height: 140px;
+    right: 70px;
+    top: 600px;
+  }
+  .db {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  footer {
+    /* bottom: -200px; */
+    color: white;
+    margin-top: auto;
+  }
 }
