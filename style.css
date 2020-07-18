@@ -177,7 +177,7 @@ footer {
     justify-content: center;
     position: absolute;
     width: 90%;
-    height: 100vh;
+    height: 100%;
     background: #181719;
     opacity: 0.9;
     text-align: center;
@@ -188,8 +188,11 @@ footer {
   nav ul {
     display: grid;
   }
+  nav li {
+    padding: 5px;
+  }
   nav li a {
-    font-size: 20px;
+    font-size: 22px;
   }
   nav li a:hover {
     color: #6ddafb;
@@ -200,13 +203,12 @@ footer {
   }
   .show {
     visibility: visible;
-    /* transform: translate3d(0, -100%, 0); */
     transform: translate3d(0, 0, 0);
-    transition: ease-in 0.3s;
+    transition: 0.3s ease-in;
   }
   .menu {
     display: block;
-    position: fixed;
+    position: relative;
     right: 0;
     margin-top: 4px;
     padding: 5px;
